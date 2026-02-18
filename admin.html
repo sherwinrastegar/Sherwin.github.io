@@ -1,76 +1,130 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" data-theme="dark">
+<html lang="en" data-theme="dark" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>پنل مدیریت | پورتفولیو</title>
-  <link rel="stylesheet" href="assets/css/admin.css"/>
+  <title>Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>پنل مدیریت محتوا</h1>
-
-    <section class="panel">
-      <h2>اطلاعات اصلی</h2>
-      <div class="grid">
-        <label>نام فارسی <input id="nameFa" /></label>
-        <label>نام انگلیسی <input id="nameEn" /></label>
-        <label>نقش فارسی <input id="roleFa" /></label>
-        <label>نقش انگلیسی <input id="roleEn" /></label>
-        <label>برچسب بالا فارسی <input id="eyebrowFa" /></label>
-        <label>برچسب بالا انگلیسی <input id="eyebrowEn" /></label>
+    <div class="topbar">
+      <div class="brand"><i class="fa-solid fa-gear"></i><span>Admin Panel</span></div>
+      <div class="controls">
+        <button class="btn" id="loadJson"><i class="fa-solid fa-file-import"></i><span>Import JSON</span></button>
+        <button class="btn" id="saveJson"><i class="fa-solid fa-file-export"></i><span>Export JSON</span></button>
+        <button class="btn" id="saveLocal"><i class="fa-solid fa-floppy-disk"></i><span>Save Local</span></button>
+        <button class="btn" id="clearLocal"><i class="fa-solid fa-trash"></i><span>Clear Local</span></button>
       </div>
-      <label>درباره من فارسی <textarea id="aboutFa"></textarea></label>
-      <label>درباره من انگلیسی <textarea id="aboutEn"></textarea></label>
+    </div>
+
+    <section class="card fade-up admin-note">
+      <h3>GitHub Pages Mode</h3>
+      <p>آپلود واقعی وجود ندارد. فایل‌ها را در assets/media قرار دهید و در همین پنل فقط لینک آن‌ها را وارد کنید. نام مناسب را خودتان اعمال کنید.</p>
     </section>
 
-    <section class="panel">
-      <h2>پروژه‌ها (JSON)</h2>
-      <textarea id="projectsJson" rows="10"></textarea>
-    </section>
-
-    <section class="panel">
-      <h2>مقالات (JSON)</h2>
-      <textarea id="articlesJson" rows="8"></textarea>
-    </section>
-
-    <section class="panel">
-      <h2>مهارت‌ها (JSON)</h2>
-      <textarea id="skillsJson" rows="8"></textarea>
-    </section>
-
-    <section class="panel">
-      <h2>مسیر حرفه‌ای (JSON)</h2>
-      <textarea id="timelineProfJson" rows="6"></textarea>
-    </section>
-
-    <section class="panel">
-      <h2>مسیر تحصیلی (JSON)</h2>
-      <textarea id="timelineEduJson" rows="6"></textarea>
-    </section>
-
-    <section class="panel">
-      <h2>زبان‌ها (JSON)</h2>
-      <textarea id="languagesJson" rows="4"></textarea>
-    </section>
-
-    <section class="panel">
-      <h2>IELTS</h2>
-      <div class="grid">
-        <label>Reading <input id="ieltsReading" type="number" step="0.5"></label>
-        <label>Writing <input id="ieltsWriting" type="number" step="0.5"></label>
-        <label>Listening <input id="ieltsListening" type="number" step="0.5"></label>
-        <label>Speaking <input id="ieltsSpeaking" type="number" step="0.5"></label>
+    <section class="admin-grid">
+      <div class="card">
+        <h3>General</h3>
+        <div class="form-grid">
+          <label>Brand Name (EN)</label><input id="brand_en" type="text">
+          <label>Brand Name (FA)</label><input id="brand_fa" type="text">
+          <label>Logo URL</label><input id="logo" type="text">
+          <label>Theme Light Label</label><input id="themeLight" type="text">
+          <label>Theme Dark Label</label><input id="themeDark" type="text">
+          <label>Projects Button (EN)</label><input id="projectsBtnEn" type="text">
+          <label>Projects Button (FA)</label><input id="projectsBtnFa" type="text">
+        </div>
       </div>
-    </section>
 
-    <section class="panel">
-      <h2>ذخیره و خروجی</h2>
-      <button id="saveBtn">ذخیره در سایت</button>
-      <button id="downloadBtn">دانلود JSON</button>
-      <button id="resetBtn">بازنشانی</button>
+      <div class="card">
+        <h3>Hero</h3>
+        <div class="form-grid">
+          <label>Name (EN)</label><input id="heroNameEn" type="text">
+          <label>Name (FA)</label><input id="heroNameFa" type="text">
+          <label>Subtitle (EN)</label><textarea id="heroSubEn"></textarea>
+          <label>Subtitle (FA)</label><textarea id="heroSubFa"></textarea>
+          <label>Avatar URL</label><input id="avatar" type="text">
+          <label>Role (EN)</label><input id="roleEn" type="text">
+          <label>Role (FA)</label><input id="roleFa" type="text">
+          <label>CTA Primary Label (EN)</label><input id="ctaPrimEn" type="text">
+          <label>CTA Primary Label (FA)</label><input id="ctaPrimFa" type="text">
+          <label>CTA Primary Link</label><input id="ctaPrimLink" type="text">
+          <label>CTA Secondary Label (EN)</label><input id="ctaSecEn" type="text">
+          <label>CTA Secondary Label (FA)</label><input id="ctaSecFa" type="text">
+          <label>CTA Secondary Link</label><input id="ctaSecLink" type="text">
+          <label>Orbit Title (EN)</label><input id="orbitTitleEn" type="text">
+          <label>Orbit Title (FA)</label><input id="orbitTitleFa" type="text">
+          <label>Orbit Desc (EN)</label><textarea id="orbitDescEn"></textarea>
+          <label>Orbit Desc (FA)</label><textarea id="orbitDescFa"></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>About</h3>
+        <div class="form-grid">
+          <label>About Title (EN)</label><input id="aboutTitleEn" type="text">
+          <label>About Title (FA)</label><input id="aboutTitleFa" type="text">
+          <label>About Text (EN)</label><textarea id="aboutEn"></textarea>
+          <label>About Text (FA)</label><textarea id="aboutFa"></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Stats</h3>
+        <div id="statsRepeater"></div>
+        <button class="btn" id="addStat"><i class="fa-solid fa-plus"></i><span>Add Stat</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Skills</h3>
+        <div id="skillsRepeater"></div>
+        <button class="btn" id="addSkill"><i class="fa-solid fa-plus"></i><span>Add Skill</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Education Path</h3>
+        <div id="eduRepeater"></div>
+        <button class="btn" id="addEdu"><i class="fa-solid fa-plus"></i><span>Add Education</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Languages & IELTS</h3>
+        <div id="langRepeater"></div>
+        <button class="btn" id="addLang"><i class="fa-solid fa-plus"></i><span>Add Language</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Articles</h3>
+        <div id="articlesRepeater"></div>
+        <button class="btn" id="addArticle"><i class="fa-solid fa-plus"></i><span>Add Article</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Projects + Gallery</h3>
+        <div id="projectsRepeater"></div>
+        <button class="btn" id="addProject"><i class="fa-solid fa-plus"></i><span>Add Project</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Contact</h3>
+        <div class="form-grid">
+          <label>Email</label><input id="email" type="text">
+          <label>Phone</label><input id="phone" type="text">
+          <label>Location</label><input id="location" type="text">
+          <label>Telegram</label><input id="telegram" type="text">
+          <label>Instagram</label><input id="instagram" type="text">
+          <label>LinkedIn</label><input id="linkedin" type="text">
+          <label>GitHub</label><input id="github" type="text">
+          <label>Website</label><input id="website" type="text">
+        </div>
+      </div>
     </section>
   </div>
+
+  <input type="file" id="jsonFile" accept=".json" hidden />
 
   <script src="assets/js/admin.js"></script>
 </body>
