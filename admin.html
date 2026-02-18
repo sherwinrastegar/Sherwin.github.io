@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>پنل مدیریت | پورتفولیو</title>
+  <link rel="stylesheet" href="assets/css/admin.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>پنل مدیریت محتوا</h1>
+
+    <section class="panel">
+      <h2>اطلاعات اصلی</h2>
+      <div class="grid">
+        <label>نام فارسی <input id="nameFa" /></label>
+        <label>نام انگلیسی <input id="nameEn" /></label>
+        <label>نقش فارسی <input id="roleFa" /></label>
+        <label>نقش انگلیسی <input id="roleEn" /></label>
+        <label>برچسب بالا فارسی <input id="eyebrowFa" /></label>
+        <label>برچسب بالا انگلیسی <input id="eyebrowEn" /></label>
+      </div>
+      <label>درباره من فارسی <textarea id="aboutFa"></textarea></label>
+      <label>درباره من انگلیسی <textarea id="aboutEn"></textarea></label>
+    </section>
+
+    <section class="panel">
+      <h2>پروژه‌ها (JSON)</h2>
+      <textarea id="projectsJson" rows="10"></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>مقالات (JSON)</h2>
+      <textarea id="articlesJson" rows="8"></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>مهارت‌ها (JSON)</h2>
+      <textarea id="skillsJson" rows="8"></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>مسیر حرفه‌ای (JSON)</h2>
+      <textarea id="timelineProfJson" rows="6"></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>مسیر تحصیلی (JSON)</h2>
+      <textarea id="timelineEduJson" rows="6"></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>زبان‌ها (JSON)</h2>
+      <textarea id="languagesJson" rows="4"></textarea>
+    </section>
+
+    <section class="panel">
+      <h2>IELTS</h2>
+      <div class="grid">
+        <label>Reading <input id="ieltsReading" type="number" step="0.5"></label>
+        <label>Writing <input id="ieltsWriting" type="number" step="0.5"></label>
+        <label>Listening <input id="ieltsListening" type="number" step="0.5"></label>
+        <label>Speaking <input id="ieltsSpeaking" type="number" step="0.5"></label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>ذخیره و خروجی</h2>
+      <button id="saveBtn">ذخیره در سایت</button>
+      <button id="downloadBtn">دانلود JSON</button>
+      <button id="resetBtn">بازنشانی</button>
+    </section>
+  </div>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
