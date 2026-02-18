@@ -1,7 +1,6 @@
 @import url("style.css");
 
 .header.mini { padding-bottom: 20px; }
-
 .main { padding-top: 20px; }
 
 .project-detail .detail-grid {
@@ -53,10 +52,6 @@
 }
 
 @media (max-width: 992px) {
-  .project-detail .detail-grid {
-    grid-template-columns: 1fr;
-  }
-  .detail-media .media-grid {
-    grid-template-columns: 1fr;
-  }
+  .project-detail .detail-grid { grid-template-columns: 1fr; }
+  .detail-media .media-grid { grid-template-columns: 1fr; }
 }
