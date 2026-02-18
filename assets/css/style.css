@@ -1,1 +1,98 @@
+:root {
+  --bg: #0b0f19;
+  --primary: #4f9cff;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #111827, #020617);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 10px 0;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.hero-buttons a {
+  padding: 12px 26px;
+  margin: 0 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--primary);
+  color: black;
+}
+
+.hero-buttons .outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+/* Sections */
+.section {
+  padding: 80px 10%;
+}
+
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.section.dark {
+  background: #020617;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+}
 
