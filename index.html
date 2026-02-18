@@ -2,77 +2,85 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sherwin — Resume</title>
 
-  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body class="theme-dark">
+<body data-theme="dark">
+
   <!-- Scroll Progress -->
   <div id="scroll-progress"></div>
 
   <!-- Bubbles Canvas -->
   <canvas id="bubble-canvas" aria-hidden="true"></canvas>
 
-  <!-- Main -->
   <main class="container">
-    <header class="hero">
-      <div class="hero__left">
-        <div class="badge">Front-End • UI/UX</div>
-        <h1 class="title">Sherwin <span>Rahimi</span></h1>
-        <p class="subtitle">
-          توسعه‌دهنده رابط کاربری با تمرکز بر تجربه کاربری، طراحی سیستم‌ها و پیاده‌سازی دقیق.
+    <div class="topbar">
+      <div class="brand">
+        <i>⚡</i>
+        Sherwin Resume
+      </div>
+      <div class="controls">
+        <button class="btn" id="theme-toggle">تغییر تم</button>
+        <a class="btn" href="projects.html">پروژه‌ها</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="card fade-up">
+        <h1>طراح و توسعه‌دهنده رابط کاربری</h1>
+        <p>
+          تمرکز من روی ساخت تجربه‌های کاربری سریع، دقیق و زیباست. عاشق سیستم‌های طراحی،
+          انیمیشن‌های ظریف و کدنویسی تمیز هستم.
         </p>
-
-        <div class="cta-row">
-          <a class="btn primary" href="#contact">ارتباط</a>
-          <a class="btn ghost" href="projects.html">پروژه‌ها</a>
-        </div>
-
-        <div class="lang-switch">
-          <button data-lang="fa" class="active">FA</button>
-          <button data-lang="en">EN</button>
+        <div class="badges">
+          <span class="badge">UI/UX Design</span>
+          <span class="badge">Front-End</span>
+          <span class="badge">JavaScript</span>
         </div>
       </div>
 
-      <div class="hero__right">
-        <div class="card">
-          <h3>اطلاعات سریع</h3>
-          <ul>
-            <li>📍 تهران، ایران</li>
-            <li>✉️ sherwin@example.com</li>
-            <li>📞 +98 912 000 0000</li>
-          </ul>
-        </div>
-      </div>
-    </header>
-
-    <section class="section" id="about">
-      <h2>درباره من</h2>
-      <p>
-        تمرکز من بر ساخت رابط‌های سریع، قابل نگهداری و زیباست. عاشق طراحی دقیق،
-        انیمیشن‌های ظریف و کدنویسی تمیز هستم.
-      </p>
-    </section>
-
-    <section class="section" id="skills">
-      <h2>مهارت‌ها</h2>
-      <div class="grid">
-        <div class="pill">HTML5 / CSS3</div>
-        <div class="pill">JavaScript (ES6+)</div>
-        <div class="pill">React / Next.js</div>
-        <div class="pill">UI/UX Design</div>
-        <div class="pill">Git / GitHub</div>
+      <div class="card profile fade-up">
+        <div class="avatar" aria-label="avatar"></div>
+        <h3>Sherwin Rahimi</h3>
+        <p>تهران، ایران</p>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <h2>ارتباط</h2>
-      <p>برای همکاری، خوشحال می‌شوم پیام بدهید.</p>
-      <a class="btn primary" href="mailto:sherwin@example.com">ارسال ایمیل</a>
+    <section class="section">
+      <div class="section-title"><i>★</i> مهارت‌ها</div>
+      <div class="grid grid-2">
+        <div class="card skill">
+          <strong>HTML / CSS</strong>
+          <div class="bar"><span style="--val: 95%"></span></div>
+        </div>
+        <div class="card skill">
+          <strong>JavaScript</strong>
+          <div class="bar"><span style="--val: 90%"></span></div>
+        </div>
+        <div class="card skill">
+          <strong>React / Next</strong>
+          <div class="bar"><span style="--val: 85%"></span></div>
+        </div>
+        <div class="card skill">
+          <strong>UI/UX Design</strong>
+          <div class="bar"><span style="--val: 80%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><i>✦</i> تماس</div>
+      <div class="contact">
+        <a href="mailto:sherwin@example.com">✉ sherwin@example.com</a>
+        <a href="https://github.com/">GitHub</a>
+        <a href="https://linkedin.com/">LinkedIn</a>
+      </div>
     </section>
   </main>
 
