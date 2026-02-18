@@ -1,147 +1,177 @@
-const DATA_KEY = "portfolioData";
+const DATA_URL = "data/data.json";
 
 const state = {
   data: null,
-  lang: localStorage.getItem("lang") || "fa",
-  theme: localStorage.getItem("theme") || "dark"
+  lang: localStorage.getItem("lang") || "en",
+  theme: localStorage.getItem("theme") || "dark",
+  currentGallery: [],
+  currentIndex: 0
 };
 
-function applyTheme() {
+function getData(){
+  return fetch(DATA_URL).then(r => r.json()).then(json => {
+    const local = localStorage.getItem("portfolioData");
+    if(local){
+      try { return JSON.parse(local); } catch { return json; }
+    }
+    return json;
+  });
+}
+
+function t(obj){
+  if(!obj) return "";
+  return obj[state.lang] || obj.en || obj.fa || "";
+}
+
+function setTheme(){
   document.documentElement.setAttribute("data-theme", state.theme);
-  updateThemeLabel();
 }
 
-function updateThemeLabel() {
-  const isLight = state.theme === "light";
-  const isFa = state.lang === "fa";
-  const label = isFa ? (isLight ? "روشن" : "تاریک") : (isLight ? "Light" : "Dark");
-  document.getElementById("themeToggle").textContent = label;
-}
-
-function applyLang() {
-  document.documentElement.setAttribute("lang", state.lang);
+function setLang(){
   document.documentElement.setAttribute("dir", state.lang === "fa" ? "rtl" : "ltr");
-  const label = state.lang === "fa" ? "EN" : "FA";
-  document.getElementById("langToggle").textContent = label;
 }
 
-async function loadData() {
-  const local = localStorage.getItem(DATA_KEY);
-  if (local) return JSON.parse(local);
-  const res = await fetch("assets/data/content.json");
-  return await res.json();
+function render(){
+  const d = state.data;
+
+  document.getElementById("brandName").textContent = t(d.brand.name);
+  document.getElementById("projectsTitle").textContent = t(d.ui.projectsPage.title);
+  document.getElementById("projectsSubtitle").textContent = t(d.ui.projectsPage.subtitle);
+  document.getElementById("homeBtn").textContent = t(d.ui.nav.home);
+
+  const langToggle = document.getElementById("langToggle");
+  langToggle.querySelector("span").textContent = state.lang === "fa" ? "EN" : "FA";
+
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.querySelector("span").textContent = state.theme === "dark" ? d.meta.theme.lightLabel : d.meta.theme.darkLabel;
+
+  const tags = new Set();
+  d.projects.forEach(p => p.tags.forEach(tg => tags.add(tg)));
+  const filterBar = document.getElementById("filterBar");
+  filterBar.innerHTML = `<div class="filter-pill active" data-tag="all">All</div>`;
+  tags.forEach(tag => {
+    filterBar.innerHTML += `<div class="filter-pill" data-tag="${tag}">${tag}</div>`;
+  });
+
+  filterBar.querySelectorAll(".filter-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      filterBar.querySelectorAll(".filter-pill").forEach(x => x.classList.remove("active"));
+      pill.classList.add("active");
+      renderProjects(pill.dataset.tag);
+    });
+  });
+
+  renderProjects("all");
 }
 
-function t(obj) {
-  if (typeof obj === "string") return obj;
-  return obj[state.lang] || obj.fa || obj.en || "";
-}
-
-function renderProjects(projects) {
-  const grid = document.getElementById("projectsGallery");
+function renderProjects(filterTag){
+  const d = state.data;
+  const grid = document.getElementById("projectsGrid");
   grid.innerHTML = "";
-  projects.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "project-card glow-card";
-    card.innerHTML = `
-      <img class="project-thumb" src="${p.thumbnail}" alt="${t(p.title)}">
-      <div class="project-info">
-        <h3>${t(p.title)}</h3>
-        <p>${t(p.desc)}</p>
-        ${(p.tags || []).map(tag => `<span class="chip">${tag}</span>`).join("")}
-        <div class="media-row">
-          ${(p.media || []).map(m => `<img src="${m}" class="project-thumb" alt="">`).join("")}
+
+  d.projects.forEach(project => {
+    if(filterTag !== "all" && !project.tags.includes(filterTag)) return;
+
+    const cover = project.gallery[0];
+    const thumb = cover.thumb || cover.src;
+
+    grid.innerHTML += `
+      <div class="card gallery-card fade-up">
+        <img class="gallery-media" src="${thumb}" alt="">
+        <div class="gallery-info">
+          <h4>${t(project.title)}</h4>
+          <p>${t(project.desc)}</p>
+          <div class="gallery-tags">${project.tags.map(tg => `<span class="badge">${tg}</span>`).join("")}</div>
+          <a class="btn open-gallery" data-project="${t(project.title)}">Open Gallery</a>
         </div>
       </div>
     `;
-    grid.appendChild(card);
   });
-}
 
-function renderArticles(articles) {
-  const grid = document.getElementById("articlesGrid");
-  grid.innerHTML = "";
-  articles.forEach(a => {
-    const card = document.createElement("div");
-    card.className = "card glow-card";
-    card.innerHTML = `
-      <h3>${t(a.title)}</h3>
-      <p>${t(a.desc)}</p>
-      ${a.link ? `<a class="chip" href="${a.link}">Read</a>` : ""}
-    `;
-    grid.appendChild(card);
-  });
-}
-
-function bindLightbox() {
-  const lightbox = document.getElementById("lightbox");
-  const lbImg = document.querySelector(".lb-img");
-  document.body.addEventListener("click", (e) => {
-    if (e.target.classList.contains("project-thumb")) {
-      lbImg.src = e.target.src;
-      lightbox.style.display = "flex";
-    }
-  });
-  document.querySelector(".lb-close").addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
-}
-
-function bindGlow() {
-  document.addEventListener("mousemove", (e) => {
-    document.querySelectorAll(".glow-card").forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty("--mx", `${x}%`);
-      card.style.setProperty("--my", `${y}%`);
+  grid.querySelectorAll(".open-gallery").forEach(btn => {
+    const pTitle = btn.dataset.project;
+    btn.addEventListener("click", () => {
+      const project = state.data.projects.find(p => t(p.title) === pTitle);
+      openGallery(project);
     });
   });
 }
 
-function bindScrollProgress() {
-  const bar = document.querySelector(".scroll-progress");
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY;
-    const height = document.body.scrollHeight - window.innerHeight;
-    bar.style.width = (scrolled / height) * 100 + "%";
-  });
+function openGallery(project){
+  state.currentGallery = project.gallery;
+  state.currentIndex = 0;
+  showLightbox(project);
 }
 
-function bindThemeAndLang() {
-  document.getElementById("themeToggle").addEventListener("click", () => {
-    state.theme = state.theme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", state.theme);
-    applyTheme();
-  });
-  document.getElementById("langToggle").addEventListener("click", () => {
-    state.lang = state.lang === "fa" ? "en" : "fa";
-    localStorage.setItem("lang", state.lang);
-    applyLang();
-    renderAll();
-  });
+function showLightbox(project){
+  const lb = document.getElementById("lightbox");
+  const content = document.getElementById("lbContent");
+  const caption = document.getElementById("lbCaption");
+  const item = state.currentGallery[state.currentIndex];
+
+  content.innerHTML = "";
+  caption.textContent = `${t(project.title)} • ${state.currentIndex + 1}/${state.currentGallery.length}`;
+
+  if(item.type === "image"){
+    const img = document.createElement("img");
+    img.src = item.src;
+    content.appendChild(img);
+  } else if(item.type === "video"){
+    if(item.provider === "external"){
+      const iframe = document.createElement("iframe");
+      iframe.src = item.src;
+      iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      content.appendChild(iframe);
+    } else {
+      const vid = document.createElement("video");
+      vid.src = item.src;
+      vid.controls = true;
+      content.appendChild(vid);
+    }
+  }
+
+  lb.classList.add("show");
+  lb.dataset.currentProject = t(project.title);
 }
 
-function renderAll() {
+document.getElementById("lbClose").addEventListener("click", () => {
+  document.getElementById("lightbox").classList.remove("show");
+});
+
+document.getElementById("lbPrev").addEventListener("click", () => {
   const d = state.data;
-  document.getElementById("brandName").textContent = t(d.site.name);
-  document.getElementById("brandRole").textContent = t(d.site.role);
-  document.getElementById("projectsTitle").textContent = t(d.sections.projects);
-  document.getElementById("projectsDesc").textContent = t(d.sections.projectsDesc);
-  document.getElementById("articlesTitle").textContent = t(d.sections.articles);
-  document.getElementById("articlesDesc").textContent = t(d.sections.articlesDesc);
+  const title = document.getElementById("lightbox").dataset.currentProject;
+  const project = d.projects.find(p => t(p.title) === title);
+  state.currentIndex = (state.currentIndex - 1 + state.currentGallery.length) % state.currentGallery.length;
+  showLightbox(project);
+});
 
-  renderProjects(d.projects);
-  renderArticles(d.articles);
-}
+document.getElementById("lbNext").addEventListener("click", () => {
+  const d = state.data;
+  const title = document.getElementById("lightbox").dataset.currentProject;
+  const project = d.projects.find(p => t(p.title) === title);
+  state.currentIndex = (state.currentIndex + 1) % state.currentGallery.length;
+  showLightbox(project);
+});
 
-(async function init() {
-  state.data = await loadData();
-  applyTheme();
-  applyLang();
-  bindThemeAndLang();
-  bindScrollProgress();
-  bindLightbox();
-  bindGlow();
-  renderAll();
-})();
+document.getElementById("langToggle").addEventListener("click", () => {
+  state.lang = state.lang === "fa" ? "en" : "fa";
+  localStorage.setItem("lang", state.lang);
+  setLang();
+  render();
+});
+
+document.getElementById("themeToggle").addEventListener("click", () => {
+  state.theme = state.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", state.theme);
+  setTheme();
+  render();
+});
+
+getData().then(data => {
+  state.data = data;
+  setLang();
+  setTheme();
+  render();
+});
