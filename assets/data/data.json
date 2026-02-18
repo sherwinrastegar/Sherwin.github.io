@@ -15,7 +15,7 @@
       "en": "Shervin Rastegar",
       "fa": "شروین رستگار"
     },
-    "logo": ""
+    "logo": "assets/media/logo.png"
   },
   "hero": {
     "name": {
@@ -26,21 +26,36 @@
       "en": "Mechatronics Engineer | Deep Learning Researcher | Product Innovator",
       "fa": "مهندس مکاترونیک | پژوهشگر دیپ‌لرنینگ | نوآور محصول"
     },
-    "badges": ["Mechatronics", "Deep Learning", "Robotics", "AI Systems"],
+    "badges": [
+      "Mechatronics",
+      "Deep Learning",
+      "Robotics",
+      "AI Systems",
+      "Computer Vision"
+    ],
     "cta": {
       "primary": {
-        "label": { "en": "Download Resume", "fa": "دانلود رزومه" },
+        "label": {
+          "en": "Download Resume",
+          "fa": "دانلود رزومه"
+        },
         "link": "assets/media/resume.pdf"
       },
       "secondary": {
-        "label": { "en": "View Projects", "fa": "مشاهده پروژه‌ها" },
+        "label": {
+          "en": "View Projects",
+          "fa": "مشاهده پروژه‌ها"
+        },
         "link": "projects.html"
       }
     },
     "orbit": {
-      "title": { "en": "Cognitive Mechatronics", "fa": "مکاترونیک شناختی" },
+      "title": {
+        "en": "Cognitive Mechatronics",
+        "fa": "مکاترونیک شناختی"
+      },
       "desc": {
-        "en": "Merging control, perception, and intelligence into high-performance systems.",
+        "en": "Integrating control, perception, and intelligence into high-performance systems.",
         "fa": "ادغام کنترل، ادراک و هوش در سیستم‌های پرقدرت."
       }
     }
@@ -53,48 +68,170 @@
     }
   },
   "about": {
-    "title": { "en": "About", "fa": "درباره من" },
+    "title": {
+      "en": "About",
+      "fa": "درباره من"
+    },
     "text": {
-      "en": "I build intelligent mechatronic systems, blending mechanics, electronics, and deep learning for real-world impact.",
-      "fa": "سیستم‌های هوشمند مکاترونیکی می‌سازم و مکانیک، الکترونیک و دیپ‌لرنینگ را برای اثر واقعی ترکیب می‌کنم."
+      "en": "I build intelligent mechatronic systems, blending mechanics, electronics, and deep learning for real-world impact. Experienced in robotics, embedded systems, and AI product development.",
+      "fa": "سیستم‌های مکاترونیکی هوشمند می‌سازم و مکانیک، الکترونیک و دیپ‌لرنینگ را برای اثر واقعی ترکیب می‌کنم. تجربه گسترده در رباتیک، امبدد و توسعه محصول هوش مصنوعی دارم."
     }
   },
   "stats": [
-    { "label": { "en": "Projects", "fa": "پروژه‌ها" }, "value": "35+" },
-    { "label": { "en": "Years Experience", "fa": "سال تجربه" }, "value": "6+" },
-    { "label": { "en": "Awards", "fa": "افتخارات" }, "value": "8" }
+    {
+      "label": {
+        "en": "Projects",
+        "fa": "پروژه‌ها"
+      },
+      "value": "40+"
+    },
+    {
+      "label": {
+        "en": "Years Experience",
+        "fa": "سال تجربه"
+      },
+      "value": "7+"
+    },
+    {
+      "label": {
+        "en": "Awards",
+        "fa": "افتخارات"
+      },
+      "value": "10"
+    }
   ],
   "skills": [
-    { "name": { "en": "Deep Learning", "fa": "دیپ‌لرنینگ" }, "level": "90%" },
-    { "name": { "en": "Control Systems", "fa": "سیستم‌های کنترل" }, "level": "85%" },
-    { "name": { "en": "Embedded", "fa": "امبدد" }, "level": "80%" }
+    {
+      "name": {
+        "en": "Deep Learning",
+        "fa": "دیپ‌لرنینگ"
+      },
+      "level": "92%"
+    },
+    {
+      "name": {
+        "en": "Computer Vision",
+        "fa": "بینایی ماشین"
+      },
+      "level": "90%"
+    },
+    {
+      "name": {
+        "en": "Control Systems",
+        "fa": "سیستم‌های کنترل"
+      },
+      "level": "86%"
+    },
+    {
+      "name": {
+        "en": "Embedded Systems",
+        "fa": "سیستم‌های امبدد"
+      },
+      "level": "82%"
+    },
+    {
+      "name": {
+        "en": "Robotics",
+        "fa": "رباتیک"
+      },
+      "level": "88%"
+    },
+    {
+      "name": {
+        "en": "Signal Processing",
+        "fa": "پردازش سیگنال"
+      },
+      "level": "80%"
+    }
   ],
   "education": [
     {
-      "title": { "en": "MSc in Mechatronics", "fa": "کارشناسی ارشد مکاترونیک" },
-      "place": { "en": "University of X", "fa": "دانشگاه X" },
+      "title": {
+        "en": "MSc in Mechatronics",
+        "fa": "کارشناسی ارشد مکاترونیک"
+      },
+      "place": {
+        "en": "University of X",
+        "fa": "دانشگاه X"
+      },
       "period": "2021-2023",
-      "desc": { "en": "Thesis: Intelligent Robotics", "fa": "پایان‌نامه: رباتیک هوشمند" }
+      "desc": {
+        "en": "Thesis: Intelligent Robotics",
+        "fa": "پایان‌نامه: رباتیک هوشمند"
+      }
+    },
+    {
+      "title": {
+        "en": "BSc in Mechanical Engineering",
+        "fa": "کارشناسی مهندسی مکانیک"
+      },
+      "place": {
+        "en": "University of Y",
+        "fa": "دانشگاه Y"
+      },
+      "period": "2016-2020",
+      "desc": {
+        "en": "Specialization in automation systems.",
+        "fa": "گرایش سیستم‌های اتوماسیون."
+      }
     }
   ],
   "languages": [
-    { "name": "English (IELTS 7.5)", "score": "" },
-    { "name": "Persian (Native)", "score": "" }
+    {
+      "name": "English (IELTS 7.5)",
+      "score": ""
+    },
+    {
+      "name": "Persian (Native)",
+      "score": ""
+    },
+    {
+      "name": "German (A2)",
+      "score": ""
+    }
   ],
   "articles": [
     {
-      "title": { "en": "Vision Transformers in Robotics", "fa": "ترنسفورمرهای بینایی در رباتیک" },
-      "summary": { "en": "A concise review of ViTs applied to perception.", "fa": "مروری کوتاه بر کاربردهای بینایی." },
+      "title": {
+        "en": "Vision Transformers in Robotics",
+        "fa": "ترنسفورمرهای بینایی در رباتیک"
+      },
+      "summary": {
+        "en": "A concise review of ViTs applied to robotic perception.",
+        "fa": "مروری کوتاه بر کاربرد ترنسفورمرها در ادراک ربات."
+      },
       "image": "assets/media/article-1.jpg",
-      "url": "#",
-      "date": "2025-12-10"
+      "url": "https://example.com/article-1",
+      "date": "2025-11-12"
+    },
+    {
+      "title": {
+        "en": "Edge AI for Mechatronics",
+        "fa": "هوش مصنوعی لبه برای مکاترونیک"
+      },
+      "summary": {
+        "en": "Deploying efficient models on embedded devices.",
+        "fa": "استقرار مدل‌های کارا روی دستگاه‌های امبدد."
+      },
+      "image": "assets/media/article-2.jpg",
+      "url": "https://example.com/article-2",
+      "date": "2025-09-03"
     }
   ],
   "projects": [
     {
-      "title": { "en": "Smart Gripper", "fa": "گریپر هوشمند" },
-      "desc": { "en": "Deep-learning enabled grasping.", "fa": "گریپ با دیپ‌لرنینگ." },
-      "tags": ["Robotics", "AI"],
+      "title": {
+        "en": "Smart Gripper",
+        "fa": "گریپر هوشمند"
+      },
+      "desc": {
+        "en": "Deep-learning enabled grasping with tactile feedback.",
+        "fa": "گریپ هوشمند با دیپ‌لرنینگ و فیدبک لمسی."
+      },
+      "tags": [
+        "Robotics",
+        "AI"
+      ],
       "gallery": [
         {
           "type": "image",
@@ -119,7 +256,39 @@
         }
       ],
       "links": [
-        { "label": "Case Study", "url": "#" }
+        {
+          "label": "Case Study",
+          "url": "https://example.com/case-study"
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Autonomous Inspection Drone",
+        "fa": "پهپاد بازرسی خودکار"
+      },
+      "desc": {
+        "en": "AI-based inspection for industrial sites.",
+        "fa": "بازرسی صنعتی با هوش مصنوعی."
+      },
+      "tags": [
+        "AI",
+        "Computer Vision"
+      ],
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/media/project-2.jpg",
+          "thumb": "assets/media/project-2.jpg",
+          "provider": "local",
+          "ratio": "16:10"
+        }
+      ],
+      "links": [
+        {
+          "label": "Demo",
+          "url": "https://example.com/demo"
+        }
       ]
     }
   ],
@@ -135,20 +304,50 @@
   },
   "ui": {
     "nav": {
-      "projects": { "en": "Projects", "fa": "پروژه‌ها" },
-      "home": { "en": "Home", "fa": "خانه" }
+      "projects": {
+        "en": "Projects",
+        "fa": "پروژه‌ها"
+      },
+      "home": {
+        "en": "Home",
+        "fa": "خانه"
+      }
     },
     "sections": {
-      "skills": { "en": "Skills", "fa": "مهارت‌ها" },
-      "education": { "en": "Education Path", "fa": "مسیر تحصیلی" },
-      "languages": { "en": "Languages", "fa": "زبان‌ها" },
-      "articles": { "en": "Articles", "fa": "مقالات" },
-      "contact": { "en": "Contact", "fa": "ارتباط" },
-      "stats": { "en": "Highlights", "fa": "شاخص‌ها" }
+      "skills": {
+        "en": "Skills",
+        "fa": "مهارت‌ها"
+      },
+      "education": {
+        "en": "Education Path",
+        "fa": "مسیر تحصیلی"
+      },
+      "languages": {
+        "en": "Languages",
+        "fa": "زبان‌ها"
+      },
+      "articles": {
+        "en": "Articles",
+        "fa": "مقالات"
+      },
+      "contact": {
+        "en": "Contact",
+        "fa": "ارتباط"
+      },
+      "stats": {
+        "en": "Highlights",
+        "fa": "شاخص‌ها"
+      }
     },
     "projectsPage": {
-      "title": { "en": "Projects Gallery", "fa": "گالری پروژه‌ها" },
-      "subtitle": { "en": "Luxury media gallery with images and videos.", "fa": "گالری لوکس با تصویر و ویدئو." }
+      "title": {
+        "en": "Projects Gallery",
+        "fa": "گالری پروژه‌ها"
+      },
+      "subtitle": {
+        "en": "Luxury media gallery with images and videos.",
+        "fa": "گالری لوکس با تصویر و ویدئو."
+      }
     }
   }
 }
