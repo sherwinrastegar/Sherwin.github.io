@@ -1,109 +1,81 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Professional Resume | GitHub Pages</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sherwin — Resume</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <div class="scroll-progress"><span id="scrollBar"></span></div>
+<body class="theme-dark">
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
 
-  <div class="bubbles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <!-- Bubbles Canvas -->
+  <canvas id="bubble-canvas" aria-hidden="true"></canvas>
 
-  <header class="topbar">
-    <div class="brand">YourName</div>
-    <div class="actions">
-      <button id="themeToggle" class="btn ghost">Theme</button>
-      <button id="langToggle" class="btn ghost">FA</button>
-      <a href="projects.html" class="btn primary" id="projectsLink">Projects</a>
-    </div>
-  </header>
-
+  <!-- Main -->
   <main class="container">
-    <section class="hero card">
-      <div class="hero-left">
-        <img src="assets/img/profile.jpg" alt="Profile" class="avatar" />
-        <div class="hero-text">
-          <h1 id="name">Your Name</h1>
-          <p id="title" class="subtitle">Full-Stack Developer</p>
-          <p id="summary" class="summary">
-            Passionate developer with a focus on UI/UX and scalable web apps.
-          </p>
-          <div class="contact">
-            <a href="mailto:you@email.com">you@email.com</a>
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-          </div>
+    <header class="hero">
+      <div class="hero__left">
+        <div class="badge">Front-End • UI/UX</div>
+        <h1 class="title">Sherwin <span>Rahimi</span></h1>
+        <p class="subtitle">
+          توسعه‌دهنده رابط کاربری با تمرکز بر تجربه کاربری، طراحی سیستم‌ها و پیاده‌سازی دقیق.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">ارتباط</a>
+          <a class="btn ghost" href="projects.html">پروژه‌ها</a>
+        </div>
+
+        <div class="lang-switch">
+          <button data-lang="fa" class="active">FA</button>
+          <button data-lang="en">EN</button>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="stat">
-          <span id="expYears">5+</span>
-          <small id="expLabel">Years Experience</small>
+
+      <div class="hero__right">
+        <div class="card">
+          <h3>اطلاعات سریع</h3>
+          <ul>
+            <li>📍 تهران، ایران</li>
+            <li>✉️ sherwin@example.com</li>
+            <li>📞 +98 912 000 0000</li>
+          </ul>
         </div>
-        <div class="stat">
-          <span id="projectsCount">25+</span>
-          <small id="projectsLabel">Projects</small>
-        </div>
-        <div class="stat">
-          <span id="clientsCount">10+</span>
-          <small id="clientsLabel">Clients</small>
-        </div>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <h2>درباره من</h2>
+      <p>
+        تمرکز من بر ساخت رابط‌های سریع، قابل نگهداری و زیباست. عاشق طراحی دقیق،
+        انیمیشن‌های ظریف و کدنویسی تمیز هستم.
+      </p>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>مهارت‌ها</h2>
+      <div class="grid">
+        <div class="pill">HTML5 / CSS3</div>
+        <div class="pill">JavaScript (ES6+)</div>
+        <div class="pill">React / Next.js</div>
+        <div class="pill">UI/UX Design</div>
+        <div class="pill">Git / GitHub</div>
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <h2 id="skillsTitle">Skills</h2>
-        <div class="tags">
-          <span>HTML</span><span>CSS</span><span>JS</span><span>React</span>
-          <span>Node.js</span><span>UI/UX</span><span>Git</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 id="languagesTitle">Languages</h2>
-        <div class="tags">
-          <span>English</span><span>Persian</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 id="experienceTitle">Experience</h2>
-        <div class="timeline">
-          <div class="item">
-            <h3>Senior Developer — Company A</h3>
-            <p>2022 - Present</p>
-          </div>
-          <div class="item">
-            <h3>Frontend Developer — Company B</h3>
-            <p>2019 - 2022</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 id="educationTitle">Education</h2>
-        <div class="timeline">
-          <div class="item">
-            <h3>BSc Computer Science</h3>
-            <p>2015 - 2019</p>
-          </div>
-        </div>
-      </div>
+    <section class="section" id="contact">
+      <h2>ارتباط</h2>
+      <p>برای همکاری، خوشحال می‌شوم پیام بدهید.</p>
+      <a class="btn primary" href="mailto:sherwin@example.com">ارسال ایمیل</a>
     </section>
   </main>
 
-  <footer class="footer">
-    <span id="footerText">© 2026 Your Name. All rights reserved.</span>
-  </footer>
-
-  <script src="assets/js/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
