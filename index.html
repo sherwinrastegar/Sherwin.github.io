@@ -1,270 +1,262 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sherwin — Resume</title>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>پورتفولیو | مهندسی مکاترونیک و دیپ‌لرنینگ</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
-<body data-theme="dark">
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <div id="scroll-progress"></div>
-
-  <header class="topbar container">
-    <div class="brand">
-      <i class="ri-sparkling-2-line"></i>
-      Sherwin Resume
-    </div>
+  <header class="header">
     <nav class="nav">
-      <a href="#about">درباره</a>
-      <a href="#experience">تجربه</a>
-      <a href="#skills">مهارت‌ها</a>
-      <a href="#projects-highlight">نمونه‌ها</a>
-      <a href="#contact">ارتباط</a>
-      <a class="btn small ghost" href="projects.html">پروژه‌ها</a>
-      <button class="btn small" id="theme-toggle">تغییر تم</button>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div class="brand-text">
+          <span data-i18n="brand_name">مهندس مکاترونیک</span>
+          <small data-i18n="brand_tag">پژوهشگر دیپ‌لرنینگ</small>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn ghost" id="langToggle" aria-label="Toggle Language">
+          <i class="ri-translate-2"></i>
+          <span data-i18n="lang_btn">EN</span>
+        </button>
+        <button class="btn ghost" id="themeToggle" aria-label="Toggle Theme">
+          <i class="ri-moon-clear-line"></i>
+          <span data-i18n="theme_btn">تاریک</span>
+        </button>
+        <a href="#contact" class="btn primary">
+          <i class="ri-chat-3-line"></i>
+          <span data-i18n="cta_contact">ارتباط</span>
+        </a>
+      </div>
     </nav>
-  </header>
 
-  <main class="container">
-
-    <!-- Hero -->
-    <section class="hero" id="home">
+    <section class="hero">
       <div class="hero-content">
-        <div class="pill">UI/UX • Front-End • Design Systems</div>
-        <h1>طراح و توسعه‌دهنده رابط کاربری با تمرکز بر تجربه کاربری ممتاز</h1>
-        <p class="muted">
-          طراحی و پیاده‌سازی محصولاتی که سریع، زیبا و مقیاس‌پذیر باشند. تمرکز من بر ساخت تجربه کاربری
-          حرفه‌ای و استانداردهای جهانی است.
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          <span data-i18n="hero_eyebrow">طراحی آینده با مکاترونیک و هوش مصنوعی</span>
+        </div>
+
+        <h1 data-i18n="hero_title">
+          من مهندس مکاترونیک هستم و سیستم‌های هوشمند با دیپ‌لرنینگ می‌سازم
+        </h1>
+
+        <p class="hero-desc" data-i18n="hero_desc">
+          تجربه‌ام در طراحی رباتیک، کنترل پیشرفته، بینایی ماشین و یادگیری عمیق باعث شده پروژه‌هایی بسازم که فراتر از استانداردهای معمول باشند.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="#contact">شروع همکاری</a>
-          <a class="btn ghost" href="projects.html">مشاهده پروژه‌ها</a>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">
+            <i class="ri-rocket-line"></i>
+            <span data-i18n="cta_projects">مشاهده پروژه‌ها</span>
+          </a>
+          <a class="btn glass" href="assets/files/CV.pdf" download>
+            <i class="ri-download-cloud-2-line"></i>
+            <span data-i18n="cta_cv">دانلود رزومه</span>
+          </a>
         </div>
 
         <div class="hero-stats">
           <div class="stat">
-            <i class="ri-award-line"></i>
-            <div>
-              <strong>5+ سال</strong>
-              <span>تجربه حرفه‌ای</span>
-            </div>
+            <span class="stat-value">8+</span>
+            <span class="stat-label" data-i18n="stat_projects">پروژه هوشمند</span>
           </div>
           <div class="stat">
-            <i class="ri-rocket-2-line"></i>
-            <div>
-              <strong>40+ پروژه</strong>
-              <span>تحویل موفق</span>
-            </div>
+            <span class="stat-value">5</span>
+            <span class="stat-label" data-i18n="stat_years">سال تجربه</span>
           </div>
           <div class="stat">
-            <i class="ri-emotion-happy-line"></i>
-            <div>
-              <strong>98%</strong>
-              <span>رضایت کارفرما</span>
-            </div>
+            <span class="stat-value">12</span>
+            <span class="stat-label" data-i18n="stat_tools">ابزار تخصصی</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-card">
+      <div class="hero-visual">
         <div class="profile-card">
-          <div class="avatar-wrap">
-            <img id="avatar-preview" src="img/avatar.jpg" alt="Avatar" />
-            <label class="upload-btn">
-              <input type="file" id="avatar-upload" accept="image/*" />
-              <i class="ri-camera-line"></i>
-              آپلود تصویر
-            </label>
-          </div>
-          <h3>Sherwin Rahimi</h3>
-          <p class="muted">تهران، ایران</p>
-          <div class="socials">
-            <a href="#"><i class="ri-github-line"></i></a>
-            <a href="#"><i class="ri-linkedin-box-line"></i></a>
-            <a href="#"><i class="ri-dribbble-line"></i></a>
-            <a href="#"><i class="ri-behance-line"></i></a>
+          <div class="glow-ring"></div>
+          <img src="assets/img/profile.jpg" alt="Profile" class="profile-img" />
+          <div class="profile-badges">
+            <span class="badge">
+              <i class="ri-cpu-line"></i>
+              <span data-i18n="badge_mechatronics">مکاترونیک</span>
+            </span>
+            <span class="badge">
+              <i class="ri-brain-line"></i>
+              <span data-i18n="badge_dl">دیپ‌لرنینگ</span>
+            </span>
           </div>
         </div>
       </div>
     </section>
+  </header>
 
-    <!-- About -->
-    <section class="section" id="about">
+  <main>
+    <section class="section feature-grid" id="about">
       <div class="section-title">
-        <i class="ri-profile-line"></i>
-        <h2>درباره من</h2>
+        <h2 data-i18n="about_title">درباره من</h2>
+        <p data-i18n="about_desc">ترکیبی از مهندسی دقیق و هوش مصنوعی برای ساخت سیستم‌های هوشمند و قابل اتکا.</p>
       </div>
-      <div class="grid grid-2">
+
+      <div class="grid-3">
         <div class="card">
-          <h3>مسیر حرفه‌ای</h3>
-          <p class="muted">
-            در طی سال‌های گذشته با تیم‌های استارتاپی و سازمانی همکاری کرده‌ام و روی طراحی سیستم،
-            تجربه کاربری، تعاملات و توسعه فرانت‌اند تمرکز داشته‌ام.
-          </p>
+          <i class="ri-robot-2-line icon"></i>
+          <h3 data-i18n="about_1_title">رباتیک پیشرفته</h3>
+          <p data-i18n="about_1_desc">طراحی مکانیزم، کنترل تطبیقی و اجرای هوشمند در محیط‌های واقعی.</p>
         </div>
         <div class="card">
-          <h3>فلسفه کاری</h3>
-          <p class="muted">
-            طراحی باید قابل اندازه‌گیری باشد. بهینه‌سازی نرخ تبدیل، کاهش زمان انجام کار و دسترسی‌پذیری
-            از اصول اصلی من است.
-          </p>
+          <i class="ri-eye-2-line icon"></i>
+          <h3 data-i18n="about_2_title">بینایی ماشین</h3>
+          <p data-i18n="about_2_desc">تحلیل و ادراک تصویری با شبکه‌های عصبی عمیق.</p>
+        </div>
+        <div class="card">
+          <i class="ri-circuit-line icon"></i>
+          <h3 data-i18n="about_3_title">طراحی سیستم</h3>
+          <p data-i18n="about_3_desc">ترکیب الکترونیک، نرم‌افزار و مکانیک با معماری پایدار.</p>
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section class="section" id="experience">
+    <section class="section skills" id="skills">
       <div class="section-title">
-        <i class="ri-briefcase-3-line"></i>
-        <h2>تجربه کاری</h2>
+        <h2 data-i18n="skills_title">مهارت‌ها</h2>
+        <p data-i18n="skills_desc">توانمندی‌های کلیدی در مهندسی مکاترونیک و یادگیری عمیق</p>
       </div>
-      <div class="timeline">
+
+      <div class="skills-grid">
+        <div class="skill">
+          <div class="skill-head">
+            <span>Python / C++</span>
+            <span>95%</span>
+          </div>
+          <div class="skill-bar"><span style="width:95%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head">
+            <span>Deep Learning</span>
+            <span>92%</span>
+          </div>
+          <div class="skill-bar"><span style="width:92%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head">
+            <span>Computer Vision</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar"><span style="width:90%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head">
+            <span>Robotics Control</span>
+            <span>88%</span>
+          </div>
+          <div class="skill-bar"><span style="width:88%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase" id="projects">
+      <div class="section-title">
+        <h2 data-i18n="projects_title">پروژه‌ها</h2>
+        <p data-i18n="projects_desc">نمونه‌هایی از پروژه‌های هوشمند و صنعتی</p>
+      </div>
+
+      <div class="grid-3">
+        <a class="project-card" href="projects.html">
+          <div class="project-thumb p1"></div>
+          <div class="project-info">
+            <h3 data-i18n="proj1_title">بازوی رباتیک هوشمند</h3>
+            <p data-i18n="proj1_desc">کنترل دقیق با شبکه عصبی و سنسورهای چندگانه</p>
+            <span class="chip">Robotics</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="projects.html">
+          <div class="project-thumb p2"></div>
+          <div class="project-info">
+            <h3 data-i18n="proj2_title">سیستم تشخیص عیب</h3>
+            <p data-i18n="proj2_desc">تشخیص خودکار خطاها در خطوط تولید صنعتی</p>
+            <span class="chip">Deep Learning</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="projects.html">
+          <div class="project-thumb p3"></div>
+          <div class="project-info">
+            <h3 data-i18n="proj3_title">بینایی ماشین صنعتی</h3>
+            <p data-i18n="proj3_desc">تشخیص کیفیت با پردازش تصویر بلادرنگ</p>
+            <span class="chip">Vision</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="center">
+        <a class="btn primary" href="projects.html">
+          <i class="ri-external-link-line"></i>
+          <span data-i18n="cta_more_projects">مشاهده همه پروژه‌ها</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section timeline" id="experience">
+      <div class="section-title">
+        <h2 data-i18n="exp_title">مسیر حرفه‌ای</h2>
+        <p data-i18n="exp_desc">گام‌های کلیدی و پروژه‌های تاثیرگذار</p>
+      </div>
+
+      <div class="timeline-list">
         <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="content card">
-            <h3>Senior UI/UX Designer — شرکت X</h3>
-            <span class="muted">1402 تا اکنون</span>
-            <p class="muted">بازطراحی تجربه کاربری پلتفرم و افزایش 32% نرخ تبدیل.</p>
+          <span class="dot"></span>
+          <div>
+            <h3 data-i18n="exp1_title">طراحی سیستم رباتیک خودکار</h3>
+            <p data-i18n="exp1_desc">پیاده‌سازی کنترلر تطبیقی و پایدار برای محیط‌های صنعتی.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="content card">
-            <h3>Front-End Engineer — شرکت Y</h3>
-            <span class="muted">1400 تا 1402</span>
-            <p class="muted">پیاده‌سازی Design System و بهبود کارایی صفحات تا 45%.</p>
+          <span class="dot"></span>
+          <div>
+            <h3 data-i18n="exp2_title">مدل تشخیص نقص با CNN</h3>
+            <p data-i18n="exp2_desc">افزایش دقت تشخیص تا 98% با معماری سفارشی.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <h3 data-i18n="exp3_title">بهینه‌سازی خط تولید با داده</h3>
+            <p data-i18n="exp3_desc">کاهش 20% زمان توقف با الگوریتم‌های پیش‌بینی.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section" id="skills">
-      <div class="section-title">
-        <i class="ri-tools-line"></i>
-        <h2>مهارت‌ها</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="card skill">
-          <strong>HTML / CSS</strong>
-          <div class="bar"><span style="--val: 95%"></span></div>
-        </div>
-        <div class="card skill">
-          <strong>JavaScript</strong>
-          <div class="bar"><span style="--val: 90%"></span></div>
-        </div>
-        <div class="card skill">
-          <strong>React / Next</strong>
-          <div class="bar"><span style="--val: 88%"></span></div>
-        </div>
-        <div class="card skill">
-          <strong>UI/UX Design</strong>
-          <div class="bar"><span style="--val: 92%"></span></div>
-        </div>
-        <div class="card skill">
-          <strong>Figma / XD</strong>
-          <div class="bar"><span style="--val: 90%"></span></div>
-        </div>
-        <div class="card skill">
-          <strong>Design Systems</strong>
-          <div class="bar"><span style="--val: 85%"></span></div>
+    <section class="section cta" id="contact">
+      <div class="cta-box">
+        <h2 data-i18n="contact_title">برای همکاری آماده‌ام</h2>
+        <p data-i18n="contact_desc">اگر پروژه‌ای در حوزه مکاترونیک یا هوش مصنوعی دارید، خوشحال می‌شوم همکاری کنیم.</p>
+        <div class="cta-actions">
+          <a class="btn primary" href="mailto:youremail@example.com">
+            <i class="ri-mail-send-line"></i>
+            <span data-i18n="contact_email">ارسال ایمیل</span>
+          </a>
+          <a class="btn ghost" href="https://linkedin.com" target="_blank">
+            <i class="ri-linkedin-fill"></i>
+            <span data-i18n="contact_linkedin">لینکدین</span>
+          </a>
         </div>
       </div>
     </section>
-
-    <!-- Services -->
-    <section class="section">
-      <div class="section-title">
-        <i class="ri-magic-line"></i>
-        <h2>خدمات</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="card icon-card">
-          <i class="ri-layout-masonry-line"></i>
-          <h3>طراحی UI حرفه‌ای</h3>
-          <p class="muted">طراحی بصری مدرن، تمیز و سازگار با برند.</p>
-        </div>
-        <div class="card icon-card">
-          <i class="ri-user-smile-line"></i>
-          <h3>بهینه‌سازی UX</h3>
-          <p class="muted">تحلیل مسیر کاربر و بهبود تعاملات کلیدی.</p>
-        </div>
-        <div class="card icon-card">
-          <i class="ri-code-box-line"></i>
-          <h3>پیاده‌سازی Front-End</h3>
-          <p class="muted">کدنویسی دقیق و بهینه با استانداردهای مدرن.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Highlight -->
-    <section class="section" id="projects-highlight">
-      <div class="section-title">
-        <i class="ri-gallery-line"></i>
-        <h2>نمونه پروژه‌ها</h2>
-      </div>
-      <div class="grid grid-2">
-        <div class="card project-highlight">
-          <img src="img/project-1.jpg" alt="project" />
-          <div class="info">
-            <h3>پلتفرم آموزشی</h3>
-            <p class="muted">طراحی تجربه کاربری و سیستم طراحی کامل.</p>
-          </div>
-        </div>
-        <div class="card project-highlight">
-          <img src="img/project-2.jpg" alt="project" />
-          <div class="info">
-            <h3>داشبورد تحلیلی</h3>
-            <p class="muted">تمرکز بر نمایش داده‌های پیچیده با UI شفاف.</p>
-          </div>
-        </div>
-      </div>
-      <a class="btn ghost" href="projects.html">مشاهده همه پروژه‌ها</a>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section">
-      <div class="section-title">
-        <i class="ri-chat-quote-line"></i>
-        <h2>نظرات کارفرماها</h2>
-      </div>
-      <div class="grid grid-2">
-        <div class="card">
-          <p class="muted">«کیفیت طراحی و دقت اجرای ایشان بی‌نظیر بود.»</p>
-          <strong>مدیر محصول — شرکت A</strong>
-        </div>
-        <div class="card">
-          <p class="muted">«UI و UX بسیار حرفه‌ای و فراتر از انتظار.»</p>
-          <strong>CEO — شرکت B</strong>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="section-title">
-        <i class="ri-contacts-line"></i>
-        <h2>ارتباط</h2>
-      </div>
-      <div class="card contact">
-        <a href="mailto:sherwin@example.com"><i class="ri-mail-line"></i> sherwin@example.com</a>
-        <a href="#"><i class="ri-phone-line"></i> +98 912 000 0000</a>
-        <a href="#"><i class="ri-map-pin-line"></i> تهران، ایران</a>
-      </div>
-    </section>
-
   </main>
 
   <footer class="footer">
-    <span>© 2026 Sherwin — All Rights Reserved</span>
+    <p data-i18n="footer_text">© 2026 تمام حقوق محفوظ است.</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
