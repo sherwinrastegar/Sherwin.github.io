@@ -6,55 +6,151 @@
   <title>Sherwin — Resume</title>
 
   <link rel="stylesheet" href="assets/css/style.css" />
-
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body data-theme="dark">
 
-  <!-- Scroll Progress -->
   <div id="scroll-progress"></div>
 
-  <!-- Bubbles Canvas -->
-  <canvas id="bubble-canvas" aria-hidden="true"></canvas>
+  <header class="topbar container">
+    <div class="brand">
+      <i class="ri-sparkling-2-line"></i>
+      Sherwin Resume
+    </div>
+    <nav class="nav">
+      <a href="#about">درباره</a>
+      <a href="#experience">تجربه</a>
+      <a href="#skills">مهارت‌ها</a>
+      <a href="#projects-highlight">نمونه‌ها</a>
+      <a href="#contact">ارتباط</a>
+      <a class="btn small ghost" href="projects.html">پروژه‌ها</a>
+      <button class="btn small" id="theme-toggle">تغییر تم</button>
+    </nav>
+  </header>
 
   <main class="container">
-    <div class="topbar">
-      <div class="brand">
-        <i>⚡</i>
-        Sherwin Resume
-      </div>
-      <div class="controls">
-        <button class="btn" id="theme-toggle">تغییر تم</button>
-        <a class="btn" href="projects.html">پروژه‌ها</a>
-      </div>
-    </div>
 
-    <section class="hero">
-      <div class="card fade-up">
-        <h1>طراح و توسعه‌دهنده رابط کاربری</h1>
-        <p>
-          تمرکز من روی ساخت تجربه‌های کاربری سریع، دقیق و زیباست. عاشق سیستم‌های طراحی،
-          انیمیشن‌های ظریف و کدنویسی تمیز هستم.
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="pill">UI/UX • Front-End • Design Systems</div>
+        <h1>طراح و توسعه‌دهنده رابط کاربری با تمرکز بر تجربه کاربری ممتاز</h1>
+        <p class="muted">
+          طراحی و پیاده‌سازی محصولاتی که سریع، زیبا و مقیاس‌پذیر باشند. تمرکز من بر ساخت تجربه کاربری
+          حرفه‌ای و استانداردهای جهانی است.
         </p>
-        <div class="badges">
-          <span class="badge">UI/UX Design</span>
-          <span class="badge">Front-End</span>
-          <span class="badge">JavaScript</span>
+        <div class="cta">
+          <a class="btn primary" href="#contact">شروع همکاری</a>
+          <a class="btn ghost" href="projects.html">مشاهده پروژه‌ها</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <i class="ri-award-line"></i>
+            <div>
+              <strong>5+ سال</strong>
+              <span>تجربه حرفه‌ای</span>
+            </div>
+          </div>
+          <div class="stat">
+            <i class="ri-rocket-2-line"></i>
+            <div>
+              <strong>40+ پروژه</strong>
+              <span>تحویل موفق</span>
+            </div>
+          </div>
+          <div class="stat">
+            <i class="ri-emotion-happy-line"></i>
+            <div>
+              <strong>98%</strong>
+              <span>رضایت کارفرما</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card profile fade-up">
-        <div class="avatar" aria-label="avatar"></div>
-        <h3>Sherwin Rahimi</h3>
-        <p>تهران، ایران</p>
+      <div class="hero-card">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <img id="avatar-preview" src="img/avatar.jpg" alt="Avatar" />
+            <label class="upload-btn">
+              <input type="file" id="avatar-upload" accept="image/*" />
+              <i class="ri-camera-line"></i>
+              آپلود تصویر
+            </label>
+          </div>
+          <h3>Sherwin Rahimi</h3>
+          <p class="muted">تهران، ایران</p>
+          <div class="socials">
+            <a href="#"><i class="ri-github-line"></i></a>
+            <a href="#"><i class="ri-linkedin-box-line"></i></a>
+            <a href="#"><i class="ri-dribbble-line"></i></a>
+            <a href="#"><i class="ri-behance-line"></i></a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-title"><i>★</i> مهارت‌ها</div>
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-title">
+        <i class="ri-profile-line"></i>
+        <h2>درباره من</h2>
+      </div>
       <div class="grid grid-2">
+        <div class="card">
+          <h3>مسیر حرفه‌ای</h3>
+          <p class="muted">
+            در طی سال‌های گذشته با تیم‌های استارتاپی و سازمانی همکاری کرده‌ام و روی طراحی سیستم،
+            تجربه کاربری، تعاملات و توسعه فرانت‌اند تمرکز داشته‌ام.
+          </p>
+        </div>
+        <div class="card">
+          <h3>فلسفه کاری</h3>
+          <p class="muted">
+            طراحی باید قابل اندازه‌گیری باشد. بهینه‌سازی نرخ تبدیل، کاهش زمان انجام کار و دسترسی‌پذیری
+            از اصول اصلی من است.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="section-title">
+        <i class="ri-briefcase-3-line"></i>
+        <h2>تجربه کاری</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content card">
+            <h3>Senior UI/UX Designer — شرکت X</h3>
+            <span class="muted">1402 تا اکنون</span>
+            <p class="muted">بازطراحی تجربه کاربری پلتفرم و افزایش 32% نرخ تبدیل.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content card">
+            <h3>Front-End Engineer — شرکت Y</h3>
+            <span class="muted">1400 تا 1402</span>
+            <p class="muted">پیاده‌سازی Design System و بهبود کارایی صفحات تا 45%.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="section-title">
+        <i class="ri-tools-line"></i>
+        <h2>مهارت‌ها</h2>
+      </div>
+      <div class="grid grid-3">
         <div class="card skill">
           <strong>HTML / CSS</strong>
           <div class="bar"><span style="--val: 95%"></span></div>
@@ -65,25 +161,110 @@
         </div>
         <div class="card skill">
           <strong>React / Next</strong>
-          <div class="bar"><span style="--val: 85%"></span></div>
+          <div class="bar"><span style="--val: 88%"></span></div>
         </div>
         <div class="card skill">
           <strong>UI/UX Design</strong>
-          <div class="bar"><span style="--val: 80%"></span></div>
+          <div class="bar"><span style="--val: 92%"></span></div>
+        </div>
+        <div class="card skill">
+          <strong>Figma / XD</strong>
+          <div class="bar"><span style="--val: 90%"></span></div>
+        </div>
+        <div class="card skill">
+          <strong>Design Systems</strong>
+          <div class="bar"><span style="--val: 85%"></span></div>
         </div>
       </div>
     </section>
 
+    <!-- Services -->
     <section class="section">
-      <div class="section-title"><i>✦</i> تماس</div>
-      <div class="contact">
-        <a href="mailto:sherwin@example.com">✉ sherwin@example.com</a>
-        <a href="https://github.com/">GitHub</a>
-        <a href="https://linkedin.com/">LinkedIn</a>
+      <div class="section-title">
+        <i class="ri-magic-line"></i>
+        <h2>خدمات</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card icon-card">
+          <i class="ri-layout-masonry-line"></i>
+          <h3>طراحی UI حرفه‌ای</h3>
+          <p class="muted">طراحی بصری مدرن، تمیز و سازگار با برند.</p>
+        </div>
+        <div class="card icon-card">
+          <i class="ri-user-smile-line"></i>
+          <h3>بهینه‌سازی UX</h3>
+          <p class="muted">تحلیل مسیر کاربر و بهبود تعاملات کلیدی.</p>
+        </div>
+        <div class="card icon-card">
+          <i class="ri-code-box-line"></i>
+          <h3>پیاده‌سازی Front-End</h3>
+          <p class="muted">کدنویسی دقیق و بهینه با استانداردهای مدرن.</p>
+        </div>
       </div>
     </section>
+
+    <!-- Projects Highlight -->
+    <section class="section" id="projects-highlight">
+      <div class="section-title">
+        <i class="ri-gallery-line"></i>
+        <h2>نمونه پروژه‌ها</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card project-highlight">
+          <img src="img/project-1.jpg" alt="project" />
+          <div class="info">
+            <h3>پلتفرم آموزشی</h3>
+            <p class="muted">طراحی تجربه کاربری و سیستم طراحی کامل.</p>
+          </div>
+        </div>
+        <div class="card project-highlight">
+          <img src="img/project-2.jpg" alt="project" />
+          <div class="info">
+            <h3>داشبورد تحلیلی</h3>
+            <p class="muted">تمرکز بر نمایش داده‌های پیچیده با UI شفاف.</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn ghost" href="projects.html">مشاهده همه پروژه‌ها</a>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="section-title">
+        <i class="ri-chat-quote-line"></i>
+        <h2>نظرات کارفرماها</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <p class="muted">«کیفیت طراحی و دقت اجرای ایشان بی‌نظیر بود.»</p>
+          <strong>مدیر محصول — شرکت A</strong>
+        </div>
+        <div class="card">
+          <p class="muted">«UI و UX بسیار حرفه‌ای و فراتر از انتظار.»</p>
+          <strong>CEO — شرکت B</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="section-title">
+        <i class="ri-contacts-line"></i>
+        <h2>ارتباط</h2>
+      </div>
+      <div class="card contact">
+        <a href="mailto:sherwin@example.com"><i class="ri-mail-line"></i> sherwin@example.com</a>
+        <a href="#"><i class="ri-phone-line"></i> +98 912 000 0000</a>
+        <a href="#"><i class="ri-map-pin-line"></i> تهران، ایران</a>
+      </div>
+    </section>
+
   </main>
 
-  <script src="assets/js/app.js"></script>
+  <footer class="footer">
+    <span>© 2026 Sherwin — All Rights Reserved</span>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
