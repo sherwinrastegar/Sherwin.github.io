@@ -251,7 +251,7 @@
         "en": "A concise review of ViTs applied to robotic perception.",
         "fa": "مروری کوتاه بر کاربرد ترنسفورمرها در ادراک ربات."
       },
-      "image": "assets/media/article-1.jpg",
+      "image": "assets/media/Articles-1.png",
       "url": "https://example.com/article-1",
       "date": "2025-11-12"
     },
@@ -264,7 +264,7 @@
         "en": "Deploying efficient models on embedded devices.",
         "fa": "استقرار مدل‌های کارا روی دستگاه‌های امبدد."
       },
-      "image": "assets/media/article-2.jpg",
+      "image": "assets/media/Articles-2.png",
       "url": "https://example.com/article-2",
       "date": "2025-09-03"
     }
